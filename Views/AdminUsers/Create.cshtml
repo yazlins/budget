@@ -1,0 +1,66 @@
+﻿@model budget.Models.User
+
+@{
+    ViewBag.title = "Users | Create";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-action="Index">Users</a></li>
+    </ol>
+</nav>
+<hr />
+<div>
+    <div class="row">
+        <form asp-action="Create">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        @Html.DisplayNameFor(model => model.Name) <span class="text-danger"><label>*</label></span>
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        @Html.DisplayNameFor(model => model.Username) <span class="text-danger"><label>*</label></span>
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        @Html.DisplayNameFor(model => model.Password) <span class="text-danger"><label>*</label></span>
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+@*                 <div class="col-md-12">
+                    <div class="form-group">
+                        @Html.DisplayNameFor(model => model.ConfirmPassword) <span class="text-danger"><label>*</label></span>
+                        @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                    </div>
+                </div> *@
+            </div>
+            <br />
+            <div class="row">
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <a class="btn btn-gray" asp-action="Index"> Back</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+
+
