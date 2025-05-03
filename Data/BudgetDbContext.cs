@@ -1,15 +1,15 @@
-﻿namespace budget.Data
+﻿namespace budget.Data;
+
+using Microsoft.EntityFrameworkCore;
+using budget.Models;
+
+public class BudgetDbContext : DbContext
 {
-    using Microsoft.EntityFrameworkCore;
-    using budget.Models;
-
-    public class BudgetDbContext : DbContext
+    public BudgetDbContext(DbContextOptions<BudgetDbContext> options)
+        : base(options)
     {
-        public BudgetDbContext(DbContextOptions<BudgetDbContext> options)
-            : base(options)
-        {
-        }
-
-        public DbSet<User> User { get; set; } = default!;
     }
+
+    public DbSet<User> Users { get; set; } = default!;
 }
+

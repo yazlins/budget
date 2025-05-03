@@ -23,7 +23,9 @@
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "nativeDebugging": true,
+      "sqlDebugging": false
     }
   },
   "$schema": "https://json.schemastore.org/launchsettings.json",
